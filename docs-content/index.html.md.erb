@@ -1,59 +1,48 @@
 ---
-title: YOUR-PRODUCT-NAME
+title: SignalFx Integration for PCF
 owner: Partners
 ---
 
-**This topic should begin with a brief description of your product. See below for an example.**
-
-This documentation describes the Redis Labs Enterprise Cluster (RLEC) Service Broker for Pivotal Cloud Foundry (PCF). 
-The RLEC Service Broker registers a service broker on PCF and exposes its service plans on the Marketplace. 
-Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the cf CLI.
+This documentation describes the SignalFx Integration for Pivotal Cloud Foundry (PCF). Use this integration to 
+monitor the health and performance of your Pivotal Cloud Foundry deployment using SignalFx. This integration
+connects to the Pivotal JMX Bridge, retrieves metrics about your Pivotal Cloud Foundry deployment, and sends them to SignalFx. 
 
 ## <a id='overview'></a>Overview
 
-**The overview should provide a description of the product's key features.**
+SignalFx's integration with PCF includes:
 
-YOUR-PRODUCT-NAME includes the following key features:
+* At-a-glance visualization of key metrics
+* Built-in dashboards
+* Documentation of the metrics collected by this integration
 
-* Feature one.
-* Feature two.
-* Feature three.
+For more information about SignalFx, see https://signalfx.com. 
 
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
-<dt>YOUR-PRODUCT-NAME details:</dt>
-<dd><strong>Version</strong>: vYOUR-VERSION-NUMBER </dd>
-<dd><strong>Release date</strong>: YOUR-RELEASE-DATE (Ex: August 1, 2016)</dd>
-<dd><strong>Software component version</strong>: vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</dd>
-<dd><strong>Compatible Ops Manager version(s)</strong>: vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.6.x, v1.7.x)</dd>
-<dd><strong>Compatible Elastic Runtime version(s)</strong>: vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.4.x, v1.5.x, v1.6.x)</dd>
-<dd><strong>vSphere support?</strong> Yes-OR-No</dd>
-<dd><strong>OpenStack support?</strong> Yes-OR-No</dd>
-<dd><strong>AWS support?</strong> Yes-OR-No</dd>
+<dt>SignalFx Integration for PCF details:</dt>
+<dd><strong>Version</strong>: v1.0.0 </dd>
+<dd><strong>Release date</strong>: March 17 2017</dd>
+<dd><strong>Software component version</strong>: SignalFx Integration for PCF v1.0.0</dd>
+<dd><strong>Compatible Ops Manager version(s)</strong>: v1.9.1+</dd>
+<dd><strong>Compatible Elastic Runtime version(s)</strong>: v1.9.0+</dd>
+<dd><strong>vSphere support?</strong> Yes</dd>
+<dd><strong>OpenStack support?</strong> Yes</dd>
+<dd><strong>AWS support?</strong> Yes</dd>
 </dl>
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+This integration has the following requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
-
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
-
-## <a id="limitations"></a>Limitations
-
-**List any known limitations.**
++ Administrative access to a Pivotal Cloud Foundry deployment
++ Pivotal Ops Metrics (JMX Bridge) installed
++ A SignalFx account and [access token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens)
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the 
-[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+Please send any bugs, feature requests, or questions about this integration to support@signalfx.com.
 
 ## <a id='license'></a>License
 
-**List any license information here.**
+This integration is released under the Apache 2.0 license. 
