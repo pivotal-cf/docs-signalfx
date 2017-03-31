@@ -1,9 +1,27 @@
 ---
-title: SignalFx Monitoring and Alerting for PCF
+title: SignalFx Monitoring and Alerting for PCF (Beta)
 owner: Partners
 ---
 
-This documentation describes SignalFx Monitoring and Alerting for Pivotal Cloud Foundry (PCF). Use this integration to 
+<style>
+    .note.warning {
+        background-color: #fdd;
+        border-color: #fbb
+    }
+
+    .note.warning:before {
+        color: #f99;
+     }
+</style>
+
+<p class="note warning">
+
+<strong>IMPORTANT: </strong>
+The SignalFx Monitoring and Alerting tile is currently in beta and is intended for evaluation and test purposes only. 
+Do not use this product in a PCF production environment.
+</p>
+
+This documentation describes the SignalFx Integration for Pivotal Cloud Foundry (PCF). Use this integration to 
 monitor the health and performance of your Pivotal Cloud Foundry deployment using SignalFx. This integration
 connects to the Pivotal JMX Bridge, retrieves metrics about your Pivotal Cloud Foundry deployment, and sends them to SignalFx. 
 
