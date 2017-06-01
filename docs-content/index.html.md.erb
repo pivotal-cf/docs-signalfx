@@ -17,13 +17,20 @@ owner: Partners
 <p class="note warning">
 
 <strong>IMPORTANT: </strong>
-The SignalFx Monitoring and Alerting tile is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a PCF production environment.
+The *SignalFx Monitoring and Alerting* tile is currently in beta and is intended for evaluation and test
+purposes only. Do not use this product in a PCF production environment.
 </p>
 
-This documentation describes the SignalFx Integration for Pivotal Cloud Foundry (PCF). Use this integration to 
-monitor the health and performance of your Pivotal Cloud Foundry deployment using SignalFx. This integration
-connects to the Pivotal JMX Bridge, retrieves metrics about your Pivotal Cloud Foundry deployment, and sends them to SignalFx. 
+This documentation describes the SignalFx Monitoring and Alerting integration for Pivotal Cloud Foundry (PCF). Use this
+integration to monitor the health and performance of your Pivotal Cloud Foundry deployment using SignalFx. This
+integration retrieves metrics about your Pivotal Cloud Foundry deployment from the Loggregator Firehose and BOSH Health
+Monitor, and sends them to SignalFx.  This tile will forward all Firehose metrics, including any custom metrics you
+might be sending to the Firehose through Metron.  It also sends the BOSH Health Monitor metrics for all BOSH-managed
+VMs.
+
+In addition to this tile, we also offer a [BOSH Release of our agent](https://github.com/signalfx/agent-boshrelease)
+that can be mixed into your BOSH deployments in order to collect metrics on services running alongside your CF
+deployment.
 
 ## <a id='overview'></a>Overview
 
@@ -33,7 +40,7 @@ SignalFx's integration with PCF includes:
 * Built-in dashboards
 * Documentation of the metrics collected by this integration
 
-For more information about SignalFx, see https://signalfx.com. 
+For more information about SignalFx, see https://signalfx.com.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -44,11 +51,11 @@ The following table provides version and version-support information about Signa
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v0.9.1</td>
+        <td>v0.10.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>May 12, 2017</td>
+        <td>June 1, 2017</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
@@ -69,7 +76,6 @@ The following table provides version and version-support information about Signa
 This integration has the following requirements:
 
 + Administrative access to a Pivotal Cloud Foundry deployment
-+ Pivotal Ops Metrics (JMX Bridge) installed
 + A SignalFx account and [access token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens)
 
 ## <a id="feedback"></a>Feedback
@@ -78,4 +84,4 @@ Please send any bugs, feature requests, or questions about this integration to s
 
 ## <a id='license'></a>License
 
-This integration is released under the Apache 2.0 license. 
+This integration is released under the Apache 2.0 license.
