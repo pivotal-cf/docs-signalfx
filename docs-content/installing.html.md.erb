@@ -1,20 +1,20 @@
 ---
-title: Installing and Configuring SignalFx Monitoring and Alerting for PCF
+title: Installing and Configuring SignalFx Monitoring and Alerting for Pivotal Platform
 owner: Partners
 ---
 
-This topic describes how to install and configure SignalFx Monitoring and Alerting for Pivotal Cloud Foundry (PCF).
+This topic describes how to install and configure SignalFx Monitoring and Alerting for Pivotal Platform.
 
-##<a id='install'></a> Install and Configure SignalFx Monitoring and Alerting for PCF
+##<a id='install'></a> Install and Configure SignalFx Monitoring and Alerting for Pivotal Platform
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/signalfx-monitoring-alerting/).
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-1. Under the **Import a Product** button, click **+** next to the version number of SignalFx Monitoring and Alerting for PCF.
+1. Under the **Import a Product** button, click **+** next to the version number of SignalFx Monitoring and Alerting for Pivotal Platform.
 This adds the tile to your staging area.
 
-1. Click the newly added **SignalFx Monitoring and Alerting for PCF** tile.
+1. Click the newly added **SignalFx Monitoring and Alerting for Pivotal Platform** tile.
 
 1. In the **Bridge Config** section, enter your SignalFx [access
 token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens). Leave the SignalFx ingestion URL unchanged
@@ -28,13 +28,13 @@ directly to the values in the tile config page in Ops Manager.
 1. Click **Save**.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the SignalFx Monitoring and
-Alerting for PCF tile. After installation completes, a message appears stating that the changes have been applied.
+Alerting for Pivotal Platform tile. After installation completes, a message appears stating that the changes have been applied.
 
 ##<a id='bosh-hm-metrics'></a> Configure BOSH HM Metrics
 
 1. Click **Return to Product Dashboard**.
 
-1. Click the **SignalFx Monitoring and Alerting for PCF** tile and select the **Status** tab.
+1. Click the **SignalFx Monitoring and Alerting for Pivotal Platform** tile and select the **Status** tab.
 
 1. Record the IP address of the **signalfx_bridge** job.
 
@@ -47,17 +47,17 @@ Alerting for PCF tile. After installation completes, a message appears stating t
 1. In the Pending Changes view, click **Apply Changes**. When complete, a message appears stating that the changes have
 been applied.
 
-1. Click **Return to Product Dashboard**. SignalFx Monitoring and Alerting for PCF is now installed and configured.
+1. Click **Return to Product Dashboard**. SignalFx Monitoring and Alerting for Pivotal Platform is now installed and configured.
 
-Metrics from PCF will begin streaming into SignalFx.
+Metrics from Pivotal Platform will begin streaming into SignalFx.
 
 ##<a id='troubleshooting'></a> Troubleshooting Tips
 
-If metrics from Pivotal Cloud Foundry don't appear in SignalFx after more than a few minutes, check the following:
+If metrics from Pivotal Platform don't appear in SignalFx after more than a few minutes, check the following:
 
-* Verify that the SignalFx Monitoring and Alerting for PCF VM has access through your firewall to the BOSH Director
+* Verify that the SignalFx Monitoring and Alerting for Pivotal Platform VM has access through your firewall to the BOSH Director
 API and Cloud Foundry APIs.
 
-* Check the logs of the deployed SignalFx Monitoring and Alerting for PCF for errors, such
+* Check the logs of the deployed SignalFx Monitoring and Alerting for Pivotal Platform for errors, such
 as connection issues to the CF or BOSH APIs, credential issues with either of those services, or errors reporting
 metrics to SignalFx for example, invalid access token and firewall preventing outbound connections.
