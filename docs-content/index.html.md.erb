@@ -6,16 +6,21 @@ owner: Partners
 <strong>WARNING:</strong> The SignalFx Monitoring and Alerting tile is currently in beta and is intended for evaluation and test
 purposes only. Do not use this product in a Pivotal Platform production environment.</p>
 
-This documentation describes the SignalFx Monitoring and Alerting integration for Pivotal Platform. Use this
-integration to monitor the health and performance of your Pivotal Platform deployment using SignalFx. This
-integration retrieves metrics about your Pivotal Platform deployment from the Loggregator Firehose and BOSH Health
-Monitor and sends them to SignalFx.  This tile forwards all Firehose metrics, including any custom metrics you
-might be sending to the Firehose through Metron.  It also sends the BOSH Health Monitor metrics for all BOSH-managed
-VMs.
+<p class="note"><strong>Note:</strong>
+Version 4.20.0-1 of the SignalFx Monitoring and Alerting is a reimplementation
+of the old 0.x line of tile releases.  It now includes a SignalFx Smart Agent
+BOSH release and buildpack, and a reimplementation of the firehose nozzle that
+uses the RLP Gateway instead of the old v1 Loggregator API. If you previously
+installed any version of this tile prior to v4.20.0-1, uninstall it and install
+the latest version.</p>
 
-In addition to this tile, SignalFX also offers a [BOSH Release of our agent](https://github.com/signalfx/agent-boshrelease)
-that can be mixed into your BOSH deployments in order to collect metrics on services running alongside your Cloud Foundry
-deployment.
+This documentation describes the SignalFx Monitoring and Alerting integration
+for Pivotal Platform. Use this integration to monitor the health and
+performance of your Pivotal Platform deployment using SignalFx. This
+integration retrieves metrics about your Pivotal Platform deployment from the
+Loggregator Firehose and sends them to SignalFx.  It also provides a buildpack
+for the [SignalFx Smart Agent](https://github.com/signalfx/signalfx-agent) to
+run the agent as a sidecar to PWS applications.
 
 ## <a id='overview'></a>Overview
 
@@ -23,7 +28,8 @@ SignalFx's integration with Pivotal Platform includes:
 
 * At-a-glance visualization of key metrics
 * Built-in dashboards
-* Documentation of the metrics collected by this integration
+* PWS Buildpack for direct application monitoring and span host metadata addition
+* BOSH Release of the Smart Agent for use in deployments
 
 For more information about SignalFx, see https://signalfx.com.
 
@@ -37,33 +43,33 @@ The following table provides version and version-support information about Signa
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v0.11.4</td>
+        <td>v4.20.0-1</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>May 3, 2018</td>
+        <td>Feb 19, 2020</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>v1.9.x, v1.10.x, v1.11.x, v1.12.x, v2.0.x, and v2.1.x</td>
+        <td>v2.x</td>
     </tr>
     <tr>
         <td>Compatible Pivotal Application Service version(s)</td>
-        <td>v1.9.x, v1.10.x, v1.11.x, v1.12.x, v2.0.x, and v2.1.x</td>
+        <td>v2.4+</td>
     </tr>
     <tr>
         <td>BOSH stemcell version</td>
-        <td>Ubuntu Trusty</td>
+        <td>Ubuntu Xenial</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS, OpenStack, and vSphere</td>
+        <td>All</td>
     </tr>
 </table>
 
 
 <p class="note"><strong>Note:</strong>
-There is no upgrade path to the v0.11.4 release. Upgrades from previous versions of the SignalFx Monitoring and Alerting tile to the v0.11.4 tile are not supoorted. If you previously installed any version of this tile prior to v0.11.4, uninstall it and install the latest version.</p>
+There is no upgrade path to the v4.20.0-1 release. Upgrades from previous versions of the SignalFx Monitoring and Alerting tile to the v4.20.0-1 tile are not supoorted. If you previously installed any version of this tile prior to v4.20.0-1, uninstall it and install the latest version.</p>
 
 ## <a id="reqs"></a>Requirements
 
@@ -74,7 +80,9 @@ This integration has the following requirements:
 
 ## <a id="feedback"></a>Feedback
 
-Please send any bugs, feature requests, or questions about this integration to support@signalfx.com.
+To report bugs, feature requests, or questions about this integration, please
+make a issue on the [Smart Agent Github
+Repo](https://github.com/signalfx/signalfx-agent).
 
 ## <a id='license'></a>License
 
