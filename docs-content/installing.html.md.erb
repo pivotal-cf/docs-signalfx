@@ -16,48 +16,36 @@ This adds the tile to your staging area.
 
 1. Click the newly added **SignalFx Monitoring and Alerting for Pivotal Platform** tile.
 
-1. In the **Bridge Config** section, enter your SignalFx [access
-token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens). Leave the SignalFx ingestion URL unchanged
-(blank).
+1. In the **SignalFx Config** section, enter your SignalFx [access
+token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens) and
+Realm.  Generally you can leave the SignalFx Ingest Base URL field blank.
 
-1. Fill in the other required fields.  You need a UAA client account for both the CF API and the BOSH Director. See
-[the Github repo for the app that backs this tile](https://github.com/signalfx/signalfx-cloudfoundry-bridge) for more
-information on these config values.  The envvars under the `Configuration` section in the README of that repo correspond
-directly to the values in the tile config page in Ops Manager.
+1. In the **Nozzle Config** section, you need a UAA account for the Loggregator
+in order to pull from the firehose via the RLP Gateway. See [The
+cloudfoundry-firehose-nozzle monitor
+doc](https://github.com/signalfx/signalfx-agent/blob/master/docs/monitors/cloudfoundry-firehose-nozzle.md)
+for more information on how to setup the UAA user and which permissions are
+needed.  The `cloudfoundry-firehose-nozzle` monitor is what is used by the job
+that the tile deploys to collect firehose metrics.  The monitor will by default
+only emit metrics that are marked default in the monitor doc previously linked.
+If you want additional firehose metrics, you can add them as a YAML list in the
+"Extra Firehose Metrics" section of this section of the nozzle config.
 
 1. Click **Save**.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the SignalFx Monitoring and
 Alerting for Pivotal Platform tile. After installation completes, a message appears stating that the changes have been applied.
 
-##<a id='bosh-hm-metrics'></a> Configure BOSH HM Metrics
-
-1. Click **Return to Product Dashboard**.
-
-1. Click the **SignalFx Monitoring and Alerting for Pivotal Platform** tile and select the **Status** tab.
-
-1. Record the IP address of the **signalfx_bridge** job.
-
-1. Return to the **Installation Dashboard**.
-
-1. Click the **BOSH Director** tile and select **Director Config**.
-
-1. In the **Metrics IP Address** field, enter the IP address of the **signalfx_bridge** job recorded previously. Click **Save**.
-
-1. In the Pending Changes view, click **Apply Changes**. When complete, a message appears stating that the changes have
-been applied.
-
-1. Click **Return to Product Dashboard**. SignalFx Monitoring and Alerting for Pivotal Platform is now installed and configured.
-
-Metrics from Pivotal Platform will begin streaming into SignalFx.
+Metrics from Pivotal Platform will begin streaming into SignalFx momentarily.
 
 ##<a id='troubleshooting'></a> Troubleshooting Tips
 
 If metrics from Pivotal Platform don't appear in SignalFx after more than a few minutes, check the following:
 
-* Verify that the SignalFx Monitoring and Alerting for Pivotal Platform VM has access through your firewall to the BOSH Director
-API and Cloud Foundry APIs.
+* Verify that the SignalFx Monitoring and Alerting for Pivotal Platform VM has access through your firewall to Cloud Foundry APIs.
 
-* Check the logs of the deployed SignalFx Monitoring and Alerting for Pivotal Platform for errors, such
-as connection issues to the CF or BOSH APIs, credential issues with either of those services, or errors reporting
-metrics to SignalFx for example, invalid access token and firewall preventing outbound connections.
+* Check the logs of the deployed SignalFx Monitoring and Alerting for Pivotal
+  Platform for errors, such as connection issues to the CF or BOSH APIs,
+  credential issues with either of those services, or errors reporting metrics to
+  SignalFx for example, invalid access token and firewall preventing outbound
+  connections.
