@@ -1,20 +1,20 @@
 ---
-title: Installing and Configuring SignalFx Monitoring and Alerting for Pivotal Platform
+title: Installing and Configuring SignalFx Monitoring and Alerting for VMware Tanzu
 owner: Partners
 ---
 
-This topic describes how to install and configure SignalFx Monitoring and Alerting for Pivotal Platform.
+This topic describes how to install and configure SignalFx Monitoring and Alerting for VMware Tanzu.
 
-##<a id='install'></a> Install and Configure SignalFx Monitoring and Alerting for Pivotal Platform
+##<a id='install'></a> Install and Configure SignalFx Monitoring and Alerting for VMware Tanzu
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/signalfx-monitoring-alerting/).
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-1. Under the **Import a Product** button, click **+** next to the version number of SignalFx Monitoring and Alerting for Pivotal Platform.
+1. Under the **Import a Product** button, click **+** next to the version number of SignalFx Monitoring and Alerting for VMware Tanzu.
 This adds the tile to your staging area.
 
-1. Click the newly added **SignalFx Monitoring and Alerting for Pivotal Platform** tile.
+1. Click the newly added **SignalFx Monitoring and Alerting for VMware Tanzu** tile.
 
 1. In the **SignalFx Config** section, enter your SignalFx [access
 token](http://docs.signalfx.com/en/latest/admin-guide/tokens.html#tokens) and
@@ -34,15 +34,15 @@ If you want additional firehose metrics, you can add them as a YAML list in the
 1. Click **Save**.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the SignalFx Monitoring and
-Alerting for Pivotal Platform tile. After installation completes, a message appears stating that the changes have been applied.
+Alerting for VMware Tanzu tile. After installation completes, a message appears stating that the changes have been applied.
 
-Metrics from Pivotal Platform will begin streaming into SignalFx momentarily.
+Metrics from VMware Tanzu will begin streaming into SignalFx momentarily.
 
 ##<a id='troubleshooting'></a> Troubleshooting Tips
 
-If metrics from Pivotal Platform don't appear in SignalFx after more than a few minutes, check the following:
+If metrics from VMware Tanzu don't appear in SignalFx after more than a few minutes, check the following:
 
-* Verify that the SignalFx Monitoring and Alerting for Pivotal Platform VM has access through your firewall to Cloud Foundry APIs.
+* Verify that the SignalFx Monitoring and Alerting for VMware Tanzu VM has access through your firewall to Cloud Foundry APIs.
 
 * Check the logs of the deployed SignalFx Monitoring and Alerting for Pivotal
   Platform for errors, such as connection issues to the CF or BOSH APIs,
